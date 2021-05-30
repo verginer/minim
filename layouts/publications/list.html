@@ -1,0 +1,10 @@
+{{ define "main" }}
+<div class="post">
+    {{ range .Pages }}
+    {{- $date := dateFormat "2006" .Date }}
+    <p>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a> <span class="date">{{ .Params.publication }} ({{ $date }})</span>
+    </p>
+    {{ end }}
+</div>
+{{ end }}

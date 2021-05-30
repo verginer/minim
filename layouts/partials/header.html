@@ -1,0 +1,11 @@
+<ul class="menu">
+    <li><a class="menu__item" href="/">Home</a></li>
+    {{- range .Site.Menus.main -}}
+    {{ $active := in $.RelPermalink (path.Dir .URL) }}
+    {{ if $active }}
+    <li><a class="menu__item menu__item_selected" href="{{ .URL }}">{{ print .Name | safeHTML }}</a></li>
+    {{ else }}
+    <li><a class="menu__item" href="{{ .URL }}">{{ print .Name | safeHTML }}</a></li>
+    {{ end }}
+    {{ end }}
+</ul>

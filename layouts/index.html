@@ -1,0 +1,17 @@
+{{ define "main" }}
+<div class="post">
+    <h1 class="title">{{ .Title }}</h1>
+    {{ .Content }}
+
+    <h2>Recent Output</h2>
+    {{ $pubs := where .Site.RegularPages "Section" "publications" }}
+    {{ $posts := where .Site.RegularPages "Section" "blog" }}
+    {{ $pages := union $pubs $posts}}
+    {{ range first 10 $pages.ByDate.Reverse }}
+    {{- $date := dateFormat "Jan, 2006" .Date }}
+    <p>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a> <span class="date"> ({{ $date }})</span>
+    </p>
+    {{ end }}
+</div>
+{{ end }}
