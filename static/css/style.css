@@ -64,6 +64,7 @@ code {
 body {
     background-color: hsl(0, 0%, 96%);
     color: rgb(30, 30, 30);
+    /* font-feature-settings: "kern"1, "liga"1, "calt"1; */
     text-rendering: optimizeLegibility;
     margin: 50px auto;
 }
@@ -97,13 +98,23 @@ a.menu__item {
 }
 
 .menu__item_selected,
-.menu__item:hover {
+a.menu__item_selected,
+a.menu__item:hover {
     color: #000;
     border-bottom: 2px solid #000;
 }
 
+.menu__item_inside,
+a.menu__item_inside {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+
 .spacer {
     flex-grow: 1;
+}
+
+.starred {
+    margin: 0 0.5em 0 -1.5em;
 }
 
 .post {
@@ -137,10 +148,11 @@ blockquote {
 }
 
 blockquote::before {
-    content: "| ";
+    content: "> ";
     float: left;
     margin: 0 0 0 -1em;
 }
+
 
 strong {
     font-weight: 700;
@@ -273,12 +285,39 @@ sub {
     top: .5ex;
 }
 
+.about_photo {
+    float: left;
+    width: 100px;
+    height: 160px;
+    margin-left: -150px;
+    margin-top: -10px;
+    background: url("/i/photo.png");
+    background-size: 200px;
+}
+
+.about_photo:hover {
+    background-position: 100%;
+}
+
+.about_inner {
+    font-size: 16px;
+    line-height: 24px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin: -12px -22px;
+}
+
+.about_inner>p {
+    margin: 0 0 8px;
+}
+
 .btn {
-    line-height: 25px;
+    line-height: 20px;
     text-decoration: none;
     background: rgba(0, 0, 0, 0.1);
     border: none;
-    /* font-size: 12px; */
+    font-size: 12px;
     padding: 0px 7px;
     display: inline-block;
     border-radius: 4px;
@@ -325,3 +364,4 @@ sub {
     font-size: 14px;
     margin-left: 4px;
 }
+
