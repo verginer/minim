@@ -1,16 +1,32 @@
 <head>
+
+
+
+
+
     <meta http-equiv="content-type" content="text/html;charset=UTF-8">
 
     <meta name="viewport" content="width=640">
-    <link href="/i/favicon.png" rel="icon" sizes="32x32">
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="theme-color" content="#ffffff">
 
     <link href="/css/style.css" rel="stylesheet" type="text/css">
     <title>{{ .Title }}</title>
 
     <meta name="author" content="{{ .Site.Params.firstname }} {{ .Site.Params.lastname }}">
-    <meta property="og:title" content="{{ .Site.Title }}">
-    <meta property="og:url" content="{{ .RelPermalink }}">
-    <meta property="og:site_name" content="{{ .RelPermalink }}">
+    {{ with .Params.description }}
+    <meta name="description" content="{{ . }}">
+    {{ end }}
+    <meta property="og:title" content="{{ .Page.Title }}">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:site_name" content="{{ .Site.BaseURL }}">
     <meta property="profile:first_name" content="{{ .Site.Params.firstname}}">
     <meta property="profile:last_name" content="{{ .Site.Params.lastname }}">
 </head>
