@@ -10,7 +10,7 @@
         {{ if in . "http" }}
             {{ $doiurl = . }}
         {{ end }}
-    <a href="{{ $doiurl }}">DOI Link</a>
+    <a class="btn" href="{{ $doiurl }}">DOI Link</a>
     {{ end }}
 
 
@@ -19,17 +19,17 @@
     {{ if in . "http" }}
     {{ $arxivurl = . }}
     {{ end }}
-    <a href="{{ $arxivurl }}">arXiv</a>
+    <a class="btn" href="{{ $arxivurl }}">arXiv</a>
     {{ end }}
 
     {{ $pdf := .Resources.GetMatch "*.pdf" }}
     {{ with $pdf }}
-    <a href='{{ .RelPermalink }}' download>PDF</a>
+    <a class="btn" href='{{ .RelPermalink }}' download>PDF</a>
     {{ end }}
 
     {{ $bibfile := .Resources.GetMatch "*.bib" }}
     {{ with $bibfile }}
-    <a href='{{ .RelPermalink }}' download>Bibtex</a>
+    <a class="btn" href='{{ .RelPermalink }}' download>Bibtex</a>
     {{ end }}
 
     <p></p>

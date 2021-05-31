@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-
 /* noto-sans-regular - latin */
 @font-face {
     font-family: 'Noto Sans';
@@ -53,10 +52,6 @@
     /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
-
-
-
-
 body {
     font: 18px/28px body, Noto Sans, sans-serif;
 }
@@ -68,9 +63,7 @@ code {
 
 body {
     background-color: hsl(0, 0%, 96%);
-    /* fallback */
     color: rgb(30, 30, 30);
-    font-feature-settings: "kern"1, "liga"1, "calt"1;
     text-rendering: optimizeLegibility;
     margin: 50px auto;
 }
@@ -81,9 +74,6 @@ body {
     padding: 0 0 0 2px;
 }
 
-.page_wide {
-    width: 810px;
-}
 
 .menu {
     width: 544px;
@@ -107,23 +97,13 @@ a.menu__item {
 }
 
 .menu__item_selected,
-a.menu__item_selected,
-a.menu__item:hover {
+.menu__item:hover {
     color: #000;
     border-bottom: 2px solid #000;
 }
 
-.menu__item_inside,
-a.menu__item_inside {
-    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
-}
-
 .spacer {
     flex-grow: 1;
-}
-
-.starred {
-    margin: 0 0.5em 0 -1.5em;
 }
 
 .post {
@@ -157,14 +137,9 @@ blockquote {
 }
 
 blockquote::before {
-    content: "> ";
+    content: "| ";
     float: left;
     margin: 0 0 0 -1em;
-}
-
-.quote-author {
-    text-align: right;
-    font-size: 15px;
 }
 
 strong {
@@ -298,39 +273,12 @@ sub {
     top: .5ex;
 }
 
-.about_photo {
-    float: left;
-    width: 100px;
-    height: 160px;
-    margin-left: -150px;
-    margin-top: -10px;
-    background: url("/i/photo.png");
-    background-size: 200px;
-}
-
-.about_photo:hover {
-    background-position: 100%;
-}
-
-.about_inner {
-    font-size: 16px;
-    line-height: 24px;
-    border: 2px solid rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    padding: 10px 20px;
-    margin: -12px -22px;
-}
-
-.about_inner>p {
-    margin: 0 0 8px;
-}
-
-.btn-subscribe {
-    line-height: 20px;
+.btn {
+    line-height: 25px;
     text-decoration: none;
     background: rgba(0, 0, 0, 0.1);
     border: none;
-    font-size: 12px;
+    /* font-size: 12px; */
     padding: 0px 7px;
     display: inline-block;
     border-radius: 4px;
@@ -338,11 +286,11 @@ sub {
     top: -1px;
 }
 
-.btn-subscribe:hover {
+.btn:hover {
     background: rgba(0, 0, 0, 0.2);
 }
 
-.btn-subscribe>svg {
+.btn>svg {
     width: 21px;
     height: 21px;
     vertical-align: bottom;
@@ -377,45 +325,3 @@ sub {
     font-size: 14px;
     margin-left: 4px;
 }
-
-.footer {
-    color: rgba(0, 0, 0, 0.55);
-}
-
-.footer {
-    font-size: 16px;
-    margin-bottom: 5em;
-}
-
-.footer>.separator {
-    margin: 0 4px;
-}
-
-.footer>a {
-    margin-right: 5px;
-}
-
-.footer>a:hover {
-    color: #000;
-}
-
-.hoverable {
-    object-fit: cover;
-    object-position: center top;
-}
-
-.hoverable.clicked {
-    object-position: center bottom;
-}
-
-@media (hover: hover) {
-    .hoverable.clicked:hover {
-        object-fit: cover;
-        object-position: center top;
-    }
-
-    .hoverable:hover {
-        object-position: center bottom;
-    }
-}
-
