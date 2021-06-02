@@ -1,0 +1,25 @@
+{{ with .Params.doi }}
+{{ $doiurl := print "https://doi.org/" . }}
+    {{ if in . "http" }}
+        {{ $doiurl = . }}
+    {{ end }}
+<a class="btn" href="{{ $doiurl }}">DOI Link</a>
+{{ end }}
+
+{{ with .Params.arxivid }}
+{{ $arxivurl := print "https://doi.org/abs/" . }}
+{{ if in . "http" }}
+{{ $arxivurl = . }}
+{{ end }}
+<a class="btn" href="{{ $arxivurl }}">arXiv</a>
+{{ end }}
+
+{{ $pdf := .Resources.GetMatch "*.pdf" }}
+{{ with $pdf }}
+<a class="btn" href='{{ .RelPermalink }}' download>PDF</a>
+{{ end }}
+
+{{ $bibfile := .Resources.GetMatch "*.bib" }}
+{{ with $bibfile }}
+<a class="btn" href='{{ .RelPermalink }}' download>Bibtex</a>
+{{ end }}
