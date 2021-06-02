@@ -1,10 +1,26 @@
 {{ define "main" }}
 <div class="post">
+    {{ range .Pages.GroupByDate "2006" }}
+    <h3> {{ .Key }} ({{ len .Pages }})</h3>
     {{ range .Pages }}
     {{- $date := dateFormat "2006" .Date }}
     <p>
         <a href="{{ .RelPermalink }}">{{ .Title }}</a> <span class="date">{{ .Params.publication }} ({{ $date }})</span>
     </p>
     {{ end }}
+    {{ end }}
 </div>
 {{ end }}
+
+
+{{/*  {{ range .Pages.GroupByDate "2006-01" }}
+<h3>{{ .Key }}</h3>
+<ul>
+    {{ range .Pages }}
+    <li>
+    <a href="{{ .Permalink }}">{{ .Title }}</a>
+    <div class="meta">{{ .Date.Format "Mon, Jan 2, 2006" }}</div>
+    </li>
+    {{ end }}
+</ul>
+{{ end }}  */}}
