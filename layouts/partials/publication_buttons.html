@@ -7,7 +7,7 @@
 {{ end }}
 
 {{ with .Params.arxivid }}
-{{ $arxivurl := print "https://doi.org/abs/" . }}
+{{ $arxivurl := print "https://arxiv.org/abs/" . }}
 {{ if in . "http" }}
 {{ $arxivurl = . }}
 {{ end }}
