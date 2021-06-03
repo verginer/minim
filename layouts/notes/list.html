@@ -1,5 +1,7 @@
 {{ define "main" }}
 <div class="post">
+    {{ with .Content}}{{ . }}{{ end }}
+    <br>
     {{ range .Pages.GroupByDate "2006"}}
     <h3>{{ .Key }}</h3>
     {{ range .Pages }}
