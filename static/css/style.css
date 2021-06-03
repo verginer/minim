@@ -138,8 +138,8 @@ a.menu__item_inside {
     flex-grow: 1;
 }
 
-.starred {
-    margin: 0 0.5em 0 -1.5em;
+.review {
+    margin: 0 0.5em 0 -2em;
 }
 
 .post {
