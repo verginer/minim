@@ -9,7 +9,7 @@ if (currentTheme == "dark") {
   document.body.classList.toggle("light-theme");
 }
 
-function toggleTheme(){
+function toggleTheme(ev){
     if (prefersDarkScheme.matches) {
         document.body.classList.toggle("light-theme");
         var theme = document.body.classList.contains("light-theme")
@@ -22,6 +22,7 @@ function toggleTheme(){
           : "light";
       }
       localStorage.setItem("theme", theme);
+      ev.preventDefault();
 }
 
 btn.addEventListener("click", toggleTheme);
