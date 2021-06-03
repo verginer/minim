@@ -13,8 +13,8 @@
     </p>
     {{ end }}
 
-    <h2>Recent <a href="/blog/">Posts</a></h2>
-    {{ $posts := where .Site.RegularPages "Section" "blog" }}
+    <h2>Recent <a href="/notes/">Notes</a></h2>
+    {{ $posts := where .Site.RegularPages "Section" "notes" }}
     {{ range first 5 $posts.ByDate.Reverse }}
     {{- $date := dateFormat "Jan 2, 2006" .Date }}
     <p>
