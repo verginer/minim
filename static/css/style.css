@@ -8,12 +8,20 @@
 body {
     --text-color: rgb(30, 30, 30);
     --light-text-color: rgba(0, 0, 0, 0.55);
-    --menu-color: rgba(0, 0, 0, 0.3);
     --bkg-color: hsl(0, 0%, 96%);
-    --underline-color: rgba(0, 0, 0, 0.2);
+    --link-color: rgb(0, 186, 81, .2);
+    --link-hl-color: rgb(0, 186, 81);
+    --btn-hl: rgb(0, 186, 81, .6);
+    --btn-color: rgb(0, 186, 81, .2);
     --code-background: rgba(0, 0, 0, 0.06);
-    --btn-highlight: rgba(0, 0, 0, 0.2);
-    --btn-color: rgba(0, 0, 0, 0.1);
+}
+
+body.dark-theme {
+    --text-color: rgb(188, 188, 188);
+    --light-text-color: rgba(205, 205, 205, 0.55);
+    --bkg-color: #161c2f;
+    --link-color: rgb(0, 186, 81, .5);
+    --code-background: rgba(0, 0, 0, 0.06);
 }
 
 /* Automatic switch to dark color scheme if device in dark mode */
@@ -21,12 +29,20 @@ body {
     body {
         --text-color: rgb(188, 188, 188);
         --light-text-color: rgba(205, 205, 205, 0.55);
-        --menu-color: rgba(210, 210, 210, 0.3);
         --bkg-color: #161c2f;
-        --underline-color: rgba(232, 232, 232, 0.2);
+        --link-color: rgb(0, 186, 81, .5);
         --code-background: rgba(0, 0, 0, 0.06);
-        --btn-highlight: rgba(200, 200, 200, 0.2);
-        --btn-color: rgba(242, 242, 242, 0.1);
+    }
+
+    body.light-theme {
+        --text-color: rgb(30, 30, 30);
+        --light-text-color: rgba(0, 0, 0, 0.55);
+        --bkg-color: hsl(0, 0%, 96%);
+        --link-color: rgb(0, 186, 81, .2);
+        --link-hl-color: rgb(0, 186, 81);
+        --btn-hl: rgb(0, 186, 81, .6);
+        --btn-color: rgb(0, 186, 81, .2);
+        --code-background: rgba(0, 0, 0, 0.06);
     }
 }
 
@@ -117,7 +133,7 @@ code {
 
 .menu__item,
 a.menu__item {
-    color: var(--menu-color);
+    color: var(--light-text-color);
     border-color: transparent;
     display: inline-block;
 }
@@ -126,12 +142,12 @@ a.menu__item {
 a.menu__item_selected,
 a.menu__item:hover {
     color: var(--text-color);
-    border-bottom: 2px solid var(--underline-color);
+    border-bottom: 2px solid var(--link-hl-color);
 }
 
 .menu__item_inside,
 a.menu__item_inside {
-    border-bottom: 2px solid var(--underline-color);
+    border-bottom: 2px solid var(--link-color);
 }
 
 .spacer {
@@ -150,11 +166,11 @@ a.menu__item_inside {
 a {
     color: inherit;
     text-decoration: none;
-    border-bottom: 2px solid var(--underline-color);
+    border-bottom: 2px solid var(--link-color);
 }
 
 a:hover {
-    border-color: currentColor;
+    border-color: var(--link-hl-color);
 }
 
 p,
@@ -322,7 +338,7 @@ sub {
 .btn {
     line-height: 30px;
     text-decoration: none;
-    background: var(--btn-highlight);
+    background: var(--btn-hl);
     border: none;
     font-size: 1rem;
     padding: 0px 7px 0px;
