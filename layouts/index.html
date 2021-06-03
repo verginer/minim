@@ -2,11 +2,9 @@
 <div class="post">
     <h1 class="title">{{ .Title }}</h1>
     {{ .Content }}
-
-
     <h2>Recent <a href="/publications/">Publications</a></h2>
-    {{ $pubs := where .Site.RegularPages "Section" "publications" }}
-    {{ range first 5 $pubs.ByDate.Reverse }}
+    {{- $pubs := where .Site.RegularPages "Section" "publications" -}}
+    {{- range first .Site.Params.maxFeaturedPubs $pubs.ByDate.Reverse -}}
     {{- $date := dateFormat "Jan, 2006" .Date }}
     <p>
         <a href="{{ .RelPermalink }}">{{ .Title }}</a> <span class="date">{{ .Params.publication }} ({{ $date }})</span>
@@ -14,8 +12,8 @@
     {{ end }}
 
     <h2>Recent <a href="/notes/">Notes</a></h2>
-    {{ $posts := where .Site.RegularPages "Section" "notes" }}
-    {{ range first 5 $posts.ByDate.Reverse }}
+    {{- $posts := where .Site.RegularPages "Section" "notes" -}}
+    {{- range first .Site.Params.maxFeaturedPubs $posts.ByDate.Reverse -}}
     {{- $date := dateFormat "Jan 2, 2006" .Date }}
     <p>
         <a href="{{ .RelPermalink }}">{{ .Title }}</a> <span class="date"> {{ $date }}</span>
