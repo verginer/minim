@@ -104,8 +104,7 @@ body {
 }
 
 
-pre,
-code {
+pre,code {
     font-family: mono, monospace;
 }
 
@@ -123,6 +122,7 @@ code {
     padding: 0 0 50px 0;
     vertical-align: top;
     display: flex;
+    font-size: 1.05em;
 }
 
 .menu>li {
@@ -178,20 +178,11 @@ blockquote {
     margin: 15px 0;
 }
 
-h1+p+blockquote {
-    margin-bottom: 30px;
-    margin-right: 1em;
-}
 
 blockquote {
     padding-left: 1em;
+    font-style: italic;
     color: var(--light-text-color);
-}
-
-blockquote::before {
-    content: "> ";
-    float: left;
-    margin: 0 0 0 -1em;
 }
 
 
@@ -217,13 +208,12 @@ h1+h2 {
 }
 
 .title {
-    font-size: 2.5em;
+    font-size: 2.1em;
     line-height: 50px;
     margin: 1.5em 0 0.75em 0;
 }
 
 p>img,
-.fig,
 figure {
     margin: 2em 0;
 }
@@ -240,17 +230,14 @@ img {
     max-width: 100%;
 }
 
-.fig,
 figure {
     text-align: center;
-    font-size: 12px;
+    font-size: 0.8rem;
     line-height: 20px;
     font-style: italic;
 }
 
 @media (min-width: 600px) {
-
-    .fig,
     figure {
         width: 600px;
         margin-left: -28px;
@@ -264,18 +251,11 @@ figure>video,
 figure>a>img {
     margin: 0 auto 1em;
     display: block;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 
 figure>video {
     max-width: 100%;
-}
-
-.label {
-    text-align: center;
-    font-size: 12px;
-    font-style: italic;
-    margin: -1em 0 1em 0;
 }
 
 code {
@@ -359,6 +339,10 @@ sub {
     margin: 0 -2px 0 -5px;
 }
 
+.btn-toggle{
+    font-size: 1.6rem;
+}
+
 .footnote {
     margin: 0 5px;
 }
@@ -387,3 +371,27 @@ sub {
     font-size: 14px;
     margin-left: 4px;
 }
+
+
+.site-footer {
+    margin-top: 5rem;
+    border-top: 1px solid var(--light-text-color);
+    padding: 30px 0;
+    margin-bottom: 15px;
+}
+
+
+.site-footer ul {
+    width: 600px;
+    margin: 0 auto 0;
+    vertical-align: top;
+    display: flex;
+    font-size: 1em;
+}
+
+.site-footer li {
+    list-style: none;
+    margin: 0 1em 0 0;
+    vertical-align: top;
+}
+
