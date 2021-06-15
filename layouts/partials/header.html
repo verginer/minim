@@ -1,3 +1,4 @@
+<nav>
 <ul class="menu">
     <li><a class="menu__item" href="/">Home</a></li>
     {{- range .Site.Menus.main -}}
@@ -8,6 +9,5 @@
     <li><a class="menu__item" href="{{ .URL }}">{{ print .Name | safeHTML }}</a></li>
     {{ end }}
     {{ end }}
-    <div class="spacer"></div>
-    <span class="btn-toggle">🌓</span>
 </ul>
+</nav>

@@ -16,13 +16,6 @@ body {
     --code-background: rgba(0, 0, 0, 0.06);
 }
 
-body.dark-theme {
-    --text-color: rgb(188, 188, 188);
-    --light-text-color: rgba(205, 205, 205, 0.55);
-    --bkg-color: #161c2f;
-    --link-color: rgb(0, 186, 81, .5);
-    --code-background: rgba(0, 0, 0, 0.06);
-}
 
 /* Automatic switch to dark color scheme if device in dark mode */
 @media (prefers-color-scheme: dark) {
@@ -31,17 +24,6 @@ body.dark-theme {
         --light-text-color: rgba(205, 205, 205, 0.55);
         --bkg-color: #161c2f;
         --link-color: rgb(0, 186, 81, .5);
-        --code-background: rgba(0, 0, 0, 0.06);
-    }
-
-    body.light-theme {
-        --text-color: rgb(30, 30, 30);
-        --light-text-color: rgba(0, 0, 0, 0.55);
-        --bkg-color: hsl(0, 0%, 96%);
-        --link-color: rgb(0, 186, 81, .2);
-        --link-hl-color: rgb(0, 186, 81);
-        --btn-hl: rgb(0, 186, 81, .6);
-        --btn-color: rgb(0, 186, 81, .2);
         --code-background: rgba(0, 0, 0, 0.06);
     }
 }
