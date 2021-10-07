@@ -11,13 +11,5 @@
     </p>
     {{ end }}
 
-    <h2>Recent <a href="/notes/">Notes</a></h2>
-    {{- $posts := where .Site.RegularPages "Section" "notes" -}}
-    {{- range first .Site.Params.maxFeaturedPubs $posts.ByDate.Reverse -}}
-    {{- $date := dateFormat "Jan 2, 2006" .Date }}
-    <p>
-        <a href="{{ .RelPermalink }}">{{ .Title }}</a> <span class="date"> {{ $date }}</span>
-    </p>
-    {{ end }}
 </div>
 {{ end }}
