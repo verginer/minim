@@ -2,7 +2,7 @@
 <div class="post">
     <p>These are my works at various stages of completion: </p>
     <p>
-        &#129466; Working Paper &mdash; &#x1F52C; Under Review &mdash; ⭐️ Starred
+        &#129466; Working Paper &mdash; &#x1F52C; Under Review &mdash; &#11088; Starred
      <p>
     {{ .Content }}
     {{ range .Pages.GroupByDate "2006" }}
@@ -11,11 +11,11 @@
     {{- $date := dateFormat "Jan 2006" .Date }}
     <p>
         {{ if eq .Params.stage "working-paper" }}
-        <span class='review' title='Working Paper'>🦺</span>
+        <span class='review' title='Working Paper'>&#129466;</span>
         {{ else if eq .Params.stage "under-review" }}
-        <span class='review' title='Revision Requested'>🔬</span>
+        <span class='review' title='Under Review'>&#x1F52C;</span>
         {{ else if eq .Params.stage "starred" }}
-        <span class='review' title='Starred'>⭐️</span>
+        <span class='review' title='Starred'>&#11088;</span>
         {{ end }}
 
         <a href="{{ .RelPermalink }}">{{ .Title }}</a> <span class="date"><em>{{ .Params.publication }}</em> - {{ $date }}</span>
